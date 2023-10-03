@@ -126,10 +126,52 @@ const map = document.querySelector('.map');
 //     isZoomed = false;
 //     selectedArea = null;
 // });
+let pointHeight = 6;
 let pointWidth = 20;
-// window.addEventListener('resize', () => {
-//   pointWidth
-// })
+function scalePositions() {
+  console.log(window.innerWidth)
+  if (window.innerWidth > 1375) {
+    pointWidth = 20;
+    console.log('shirina', window.innerWidth)
+    scale = 1.9;
+    console.log(scale);
+    pointHeight = 150;
+  }
+  else if (window.innerWidth < 1375 && window.innerWidth > 1128) {
+    pointWidth = 9
+    console.log('shirina < 1338', window.innerWidth)
+    scale = 1.9;
+    console.log(scale);
+    pointHeight = 150;
+  }
+  else if  (window.innerWidth < 1128 && window.innerWidth > 945) {
+    scale = 1.7;
+    console.log('shirina < 1128', window.innerWidth)
+    pointWidth = 7;
+    pointHeight = 150;
+  }
+  else if  (window.innerWidth < 945 && window.innerWidth > 400) {
+    scale = 2;
+    console.log('shirina < 1128', window.innerWidth)
+    pointWidth = 6;
+    pointHeight = 150;
+  }
+  else if  (window.screen.width < 400) {
+    scale = 1.6;
+    console.log('shirina', window.screen.width)
+    pointWidth = 0.0099 * window.screen.width;
+    pointHeight = 0.3 * window.screen.width;
+  }
+}
+
+scalePositions()
+
+window.addEventListener('resize', () => {
+  scalePositions()
+})
+
+
+
 const slider = document.querySelector('.slider')
 const cityName = document.querySelector('.info-block__cities-name')
 const infoBlock = document.querySelector('.info-block')
@@ -171,10 +213,9 @@ areas.forEach((area) => {
 
 
   area.addEventListener('click', () => {
-    const targetX = window.innerWidth / pointWidth; // Цільова позиція по осі X (центр екрану)
-    const targetY = window.innerHeight / 6; // Цільова позиція по осі Y (центр екрану)
+    const targetX = window.innerWidth / pointWidth;
+    const targetY = pointHeight;
     if (!hasBeenClicked) {
-      // Якщо це перший клік, то збільшити область
       hasBeenClicked = true;
       indexOfOblast = area.id;
       console.log(indexOfOblast)
@@ -182,7 +223,7 @@ areas.forEach((area) => {
         targets: area,
         translateX: targetX - area.getBBox().x - area.getBBox().width / 2,
         translateY: targetY - area.getBBox().y - area.getBBox().height / 2,
-        scale: 2.3,
+        scale: scale,
         duration: 1000,
         filter: 'drop-shadow(0px 0px 10px #2d71bc)',
         fps: 60,

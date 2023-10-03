@@ -240,11 +240,10 @@
                 <div class="info-block__container">
                     <div class="info-block__regions">
                         <h4 class="info-block__cities-name"></h4>
-                        <div class="" style="display: flex;  font-size: 18px; justify-content: center;">
-                            <h3 style="text-align: center; color: #ffffff;">Windows panels installed Total: 6256</h3>
+                        <div class="info-block__" style="display: flex;  font-size: 18px; justify-content: center;">
+                            <h3 class="total-info">Windows panels installed Total: 6256</h3>
                         </div>
-                        <div class="" style="  display: flex; margin-top: 30px;
-                        justify-content: space-between;">
+                        <div class="content__did">
                             <div class="info-block__regions-container">
                                 <div class="points">
                                     <h4>March: </h4>
@@ -275,7 +274,7 @@
                             </div>
 
                             <div class="info-block__regions-container">
-                                <div  class="multiappartment-buildings points">
+                                <div class="multiappartment-buildings points">
                                     <img style="width: 30px;" src="./images/colonial.png" alt="">
                                     <h4>Multiappartment buildings - </h4>
                                     <p>38</p>
@@ -318,51 +317,40 @@
     </main>
     <div class="slider">
         <div style="border-radius: 5px;">
-            <img style="width: 196px; border-radius: 5px; height: 145px; object-fit: cover;"
-                src="./windowImg/до (1).jpg" alt="">
+            <img class="image__slider" src="./windowImg/до (1).jpg" alt="">
         </div>
         <div style="border-radius: 5px;">
-            <img style="width: 196px; border-radius: 5px; height: 145px; object-fit: cover;"
-                src="./windowImg/до (2).jpg" alt="">
+            <img class="image__slider" src="./windowImg/до (2).jpg" alt="">
         </div>
         <div style="border-radius: 5px;">
-            <img style="width: 196px; border-radius: 5px; height: 145px; object-fit: cover;" src="./windowImg/до.jpg"
-                alt="">
+            <img class="image__slider" src="./windowImg/до.jpg" alt="">
         </div>
         <div style="border-radius: 5px;">
-            <img style="width: 196px; border-radius: 5px; height: 145px; object-fit: cover;"
-                src="./windowImg/після (1).jpg" alt="">
+            <img class="image__slider" src="./windowImg/після (1).jpg" alt="">
         </div>
         <div style="border-radius: 5px;">
-            <img style="width: 196px; border-radius: 5px; height: 145px; object-fit: cover;"
-                src="./windowImg/після (2) (1).jpg" alt="">
+            <img class="image__slider" src="./windowImg/після (2) (1).jpg" alt="">
         </div>
         <div style="border-radius: 5px;">
-            <img style="width: 196px;  border-radius: 5px; height: 145px; object-fit: cover;"
-                src="./windowImg/після (2) (2).jpg" alt="">
+            <img class="image__slider" src="./windowImg/після (2) (2).jpg" alt="">
         </div>
         <div style="border-radius: 5px;">
-            <img style="width: 196px;border-radius: 5px; height: 145px; object-fit: cover;"
-                src="./windowImg/після (2).jpg" alt="">
+            <img class="image__slider" src="./windowImg/після (2).jpg" alt="">
         </div>
         <div style="border-radius: 5px;">
-            <img style="width: 196px;border-radius: 5px; height: 145px; object-fit: cover;"
-                src="./windowImg/після (3).jpg" alt="">
+            <img class="image__slider" src="./windowImg/після (3).jpg" alt="">
         </div>
         <div style="border-radius: 5px;">
-            <img style="width: 196px;border-radius: 5px; height: 145px; object-fit: cover;" src="./windowImg/після.jpg"
-                alt="">
+            <img class="image__slider" src="./windowImg/після.jpg" alt="">
         </div>
         <div style="border-radius: 5px;">
-            <img style="width: 196px;border-radius: 5px; height: 145px; object-fit: cover;"
-                src="./windowImg/Ірпінь  музей до (1).jpg" alt="">
+            <img class="image__slider" src="./windowImg/Ірпінь  музей до (1).jpg" alt="">
         </div>
         <div style="border-radius: 5px;">
-            <img style="width: 196px;border-radius: 5px; height: 145px; object-fit: cover;"
-                src="./windowImg/Ірпінь Захисників 4 До.jpg" alt="">
+            <img class="image__slider" src="./windowImg/Ірпінь Захисників 4 До.jpg" alt="">
         </div>
-
     </div>
+
     <footer>
         <img class="region" src="./images/lvivOblast.svg" alt="region image" />
     </footer>
@@ -383,6 +371,22 @@
             autoplay: true,
             arrows: false,
             dots: false,
+            responsive: [
+                {
+                    breakpoint: 1116,
+                    settings: {
+                        slidesToShow: 4,
+                        slidesToScroll: 1
+                    }
+                },
+                {
+                    breakpoint: 890,
+                    settings: {
+                        slidesToShow: 3,
+                        slidesToScroll: 1
+                    }
+                },
+            ]
         });
     </script>
 </body>
