@@ -144,35 +144,53 @@ function scalePositions() {
     console.log(scale);
     pointHeight = 150;
   }
-  else if  (window.innerWidth < 1128 && window.innerWidth > 945) {
+  else if (window.innerWidth < 1128 && window.innerWidth > 945) {
     scale = 1.7;
-    console.log('shirina < 1128', window.innerWidth)
+    console.log('shirina < 1128', window.innerWidth);
     pointWidth = 7;
     pointHeight = 150;
   }
-  else if  (window.innerWidth < 945 && window.innerWidth > 750) {
+  else if (window.innerWidth < 945 && window.innerWidth > 750) {
     scale = 2;
-    console.log('shirina < 1128', window.innerWidth)
+    console.log('shirina < 945', window.innerWidth)
     pointWidth = 6;
     pointHeight = 150;
   }
-  else if  (window.innerWidth < 750 && window.innerWidth > 570) {
+  else if (window.innerWidth < 750 && window.innerWidth > 570) {
     scale = 2;
-    console.log('shirina < 1128', window.innerWidth)
+    console.log('shirina < 750', window.innerWidth)
     pointWidth = 0.0011 * window.screen.width;
-    pointHeight =  -0.0009 * window.screen.width;
+    pointHeight = -0.0009 * window.screen.width;
   }
-  else if  (window.innerWidth < 570 && window.innerWidth > 400) {
-    scale = 2.3;
-    console.log('shirina < 1128', window.innerWidth)
-    pointWidth = 0.0008 * window.screen.width;
-    pointHeight =  -0.02 * window.screen.width;
+  else if (window.innerWidth < 570 && window.innerWidth > 500) {
+    scale = 2.4;
+    console.log('shirina < 570', window.innerWidth)
+    pointWidth = 0.00089 * window.screen.width;
+    pointHeight = -0.03 * window.screen.width;
   }
-  else if  (window.screen.width < 400) {
-    scale = 2.0;
-    console.log('shirina', window.screen.width)
-    pointWidth = 0.0099 * window.screen.width;
-    pointHeight = 0.00099 * window.screen.width;
+  else if (window.innerWidth < 500 && window.innerWidth > 450) {
+    scale = 2.4;
+    console.log('shirina < 570', window.innerWidth)
+    pointWidth = 0.00078 * window.screen.width;
+    pointHeight = -0.03 * window.screen.width;
+  }
+  else if (window.innerWidth < 450 && window.innerWidth > 400) {
+    scale = 2.4;
+    console.log('shirina < 570', window.innerWidth)
+    pointWidth = 0.00068 * window.screen.width;
+    pointHeight = -0.09 * window.screen.width;
+  }
+  else if (window.innerWidth < 400 && window.innerWidth > 350) {
+    scale = 2.9;
+    console.log('ura < 400', window.innerWidth)
+    pointWidth = 0.00058 * window.screen.width;
+    pointHeight = -0.1 * window.screen.width;
+  }
+  else if (window.innerWidth < 350 && window.innerWidth > 300) {
+    scale = 3.5;
+    console.log('ura 350', window.screen.width)
+    pointWidth = 0.0005 * window.screen.width;
+    pointHeight = -0.1 * window.screen.width;
   }
 }
 

@@ -493,7 +493,11 @@ h4 {
   }
 
 }
-
+@media(max-width: 600px) {
+  .img-window {
+    max-width: 180px;
+  }
+}
 @media(max-width: 460px) {
   .header {
     padding: 8px 20px;
