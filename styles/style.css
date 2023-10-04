@@ -373,15 +373,19 @@ h4 {
     padding: 20px 20px;
     gap: 10px;
   }
+
   .points {
     font-size: 14px;
   }
-  .points  p{
+
+  .points p {
     font-size: 16px;
   }
+
   .total-info {
     font-size: 17px;
   }
+
   .info-block__cities-name {
     font-size: 30px;
   }
@@ -409,7 +413,7 @@ h4 {
   .info-block {
     height: 80%;
   }
-  
+
   h4 {
     font-size: 12px;
   }
@@ -431,9 +435,17 @@ h4 {
     height: 60px;
   }
 
+  .info-block__container {
+    width: 90%;
+    justify-content: center;
+  }
+
   .header__gem img {
     height: 60px;
     width: auto;
+  }
+  .slider {
+    bottom: 0px;
   }
 
   .header__buffet img {
@@ -441,8 +453,42 @@ h4 {
     width: auto;
   }
 
+  .map {
+    height: 100%;
+  }
+
+  .img-window {
+    align-self: flex-end;
+  }
+
+  .info-block {
+    justify-content: flex-end;
+    width: auto;
+    height: 70%;
+    left: 0px;
+    align-items: center
+  }
+
+  .info-block__regions {
+    height: auto;
+  }
+
+  .content__did {
+    flex-direction: column;
+  }
+
+  .info-block__regions-container {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .info-block-tricky {
+    width: 100%;
+    align-items: center
+  }
+
   main {
-    align-items: flex-start;
+    align-items: center;
     padding: 0;
   }
 
@@ -472,5 +518,5 @@ h4 {
   width: 196px;
   border-radius: 5px;
   height: 145px;
-  object-fit: cover
+  object-fit: cover;
 }

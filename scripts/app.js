@@ -150,17 +150,29 @@ function scalePositions() {
     pointWidth = 7;
     pointHeight = 150;
   }
-  else if  (window.innerWidth < 945 && window.innerWidth > 400) {
+  else if  (window.innerWidth < 945 && window.innerWidth > 750) {
     scale = 2;
     console.log('shirina < 1128', window.innerWidth)
     pointWidth = 6;
     pointHeight = 150;
   }
+  else if  (window.innerWidth < 750 && window.innerWidth > 570) {
+    scale = 2;
+    console.log('shirina < 1128', window.innerWidth)
+    pointWidth = 0.0011 * window.screen.width;
+    pointHeight =  -0.0009 * window.screen.width;
+  }
+  else if  (window.innerWidth < 570 && window.innerWidth > 400) {
+    scale = 2.3;
+    console.log('shirina < 1128', window.innerWidth)
+    pointWidth = 0.0008 * window.screen.width;
+    pointHeight =  -0.02 * window.screen.width;
+  }
   else if  (window.screen.width < 400) {
-    scale = 1.6;
+    scale = 2.0;
     console.log('shirina', window.screen.width)
     pointWidth = 0.0099 * window.screen.width;
-    pointHeight = 0.3 * window.screen.width;
+    pointHeight = 0.00099 * window.screen.width;
   }
 }
 
