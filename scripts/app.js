@@ -131,48 +131,48 @@ let pointWidth = 20;
 function scalePositions() {
   let blockHeight = map.getBoundingClientRect().height;
   console.log('Висота блока:', blockHeight, 'px');
-  if (window.screen.width > 1375 ) {
-    pointWidth = 20;
+  if (window.screen.width > 1375) {
+    pointWidth = 0.008 * window.screen.width;;
     console.log('shirina', window.innerWidth)
     scale = 1.9;
     console.log(scale);
     pointHeight = 150;
   }
-  else if (window.screen.width < 1375 && window.screen.width > 1128 ) {
+  else if (window.screen.width < 1375 && window.screen.width > 1128) {
     pointWidth = 9
     console.log('shirina < 1338', window.screen.width)
     scale = 1.9;
     console.log(scale);
     pointHeight = 150;
   }
-  else if (window.screen.width < 1128 && window.screen.width > 945 ) {
+  else if (window.screen.width < 1128 && window.screen.width > 945) {
     scale = 1.7;
     console.log('shirina < 1128', window.screen.width);
     pointWidth = 0.007 * window.screen.width;;
     pointHeight = 150;
   }
-  else if (window.screen.width < 945 && window.screen.width > 750 ) {
+  else if (window.screen.width < 945 && window.screen.width > 750) {
     scale = 2;
     console.log('shirina < 945', window.screen.width)
     pointWidth = 6;
     pointHeight = 150;
   }
-  else if (window.screen.width <= 750 && window.screen.width > 650 ) {
+  else if (window.screen.width <= 750 && window.screen.width > 650) {
     scale = 2;
     console.log('shirina < 750', window.screen.width)
     pointWidth = 0.003 * window.screen.width;
-    console.log('pointWidth ',pointWidth);
-    pointHeight = 0.08* window.screen.width;
-    console.log('pointHeight ',pointHeight);
+    console.log('pointWidth ', pointWidth);
+    pointHeight = 0.08 * window.screen.width;
+    console.log('pointHeight ', pointHeight);
 
   }
-  else if (window.screen.width < 650 && window.screen.width > 570 ) {
+  else if (window.screen.width < 650 && window.screen.width > 570) {
     scale = 2;
     console.log('shirina < 650', window.screen.width)
     pointWidth = 0.003 * window.screen.width;
     pointHeight = blockHeight * 0.04;
-    console.log ('blockHeight' , blockHeight * 0.0000001)
-    console.log('pointHeight ',pointHeight);
+    console.log('blockHeight', blockHeight * 0.0000001)
+    console.log('pointHeight ', pointHeight);
 
   }
   else if (window.screen.width < 570 && window.screen.width > 500) {
@@ -191,7 +191,7 @@ function scalePositions() {
     scale = 2.4;
     console.log('shirina < 450', window.screen.width)
     pointWidth = 0.003 * window.screen.width;
-    pointHeight = -blockHeight / 6; 
+    pointHeight = -blockHeight / 6;
   }
   else if (window.screen.width < 400 && window.screen.width > 350) {
     scale = 2;
@@ -229,15 +229,16 @@ console.log(regionsArray)
 
 const opacityMap = new Map();
 areas.forEach((area) => {
-area.addEventListener('mouseover', ()=> {
-  area.classList.add('hover')
-})
-area.addEventListener('mouseout', ()=> {
-  area.classList.remove('hover')
-})
+  area.addEventListener('mouseover', () => {
+    area.classList.add('hover')
+  })
+  area.addEventListener('mouseout', () => {
+    area.classList.remove('hover')
+  })
   opacityMap.set(area, 1);
   function handleRegions(bool) {
     if (bool) {
+      area.classList.remove ('enlargeActive')
       setTimeout(() => {
         const pathRect = area.getBoundingClientRect();
         const pathX = pathRect.left;
@@ -246,21 +247,23 @@ area.addEventListener('mouseout', ()=> {
         img.style.height = area.getBoundingClientRect().height + 'px';
         footer.style.top = Math.round(pathY) + 'px';
         footer.style.left = Math.round(pathX) + 'px';
-      }, 1500)
+        area.classList.add ('enlargeActive')
+      }, 1100)
       setTimeout(() => {
         footer.classList.add('active-footer');
         infoBlock.classList.add('active-footer');
         slider.classList.add('active-footer');
-      }, 1600)
+      }, 1200)
     } else {
       slider.classList.remove('active-footer');
       infoBlock.classList.remove('active-footer');
-      footer.classList.remove('active-footer')
+      footer.classList.remove('active-footer');
     }
   }
 
-
+  area.classList.add ('enlargeActive')
   area.addEventListener('click', () => {
+    
     const targetX = window.innerWidth / pointWidth;
     const targetY = pointHeight;
     if (!hasBeenClicked) {
@@ -273,8 +276,12 @@ area.addEventListener('mouseout', ()=> {
         translateY: targetY - area.getBBox().y - area.getBBox().height / 2,
         scale: scale,
         duration: 1000,
-        filter: 'drop-shadow(0px 0px 10px #2d71bc)',
         fps: 60,
+        complete: function () {
+          area.style.trunsition = '';
+        },
+        easing: 'easeOutExpo',
+        filter: 'drop-shadow(0px 0px 10px #2d71bc)',
       });
       handleRegions(true)
       areas.forEach((item) => {
@@ -295,16 +302,17 @@ area.addEventListener('mouseout', ()=> {
         scale: 1,
         translateX: 0,
         translateY: 1,
+        easing: 'easeOutExpo',
         duration: 1000,
         fps: 60,
         complete: function () {
           area.style.transform = '';
+          area.style.trunsition = '0.3s'
           area.style.filter = '';
           indexOfOblast = '';
           area.classList.remove('hover');
         },
       });
-
       handleRegions(false)
       areas.forEach((item) => {
 
