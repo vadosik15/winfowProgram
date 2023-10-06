@@ -545,7 +545,7 @@ h4 {
 @media screen and (max-height: 870px) {
   .slider {
     position: static;
-    margin-top: -50px;
+    margin-top: -10px;
   }
 }
 

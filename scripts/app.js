@@ -157,7 +157,7 @@ function scalePositions() {
     pointWidth = 6;
     pointHeight = 150;
   }
-  else if (window.screen.width < 750 && window.screen.width > 650 ) {
+  else if (window.screen.width <= 750 && window.screen.width > 650 ) {
     scale = 2;
     console.log('shirina < 750', window.screen.width)
     pointWidth = 0.003 * window.screen.width;
@@ -167,10 +167,10 @@ function scalePositions() {
 
   }
   else if (window.screen.width < 650 && window.screen.width > 570 ) {
-    scale = 1.7;
+    scale = 2;
     console.log('shirina < 650', window.screen.width)
     pointWidth = 0.003 * window.screen.width;
-    pointHeight = blockHeight * 0.02;
+    pointHeight = blockHeight * 0.04;
     console.log ('blockHeight' , blockHeight * 0.0000001)
     console.log('pointHeight ',pointHeight);
 
