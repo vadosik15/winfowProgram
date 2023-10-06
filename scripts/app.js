@@ -129,67 +129,79 @@ const map = document.querySelector('.map');
 let pointHeight = 6;
 let pointWidth = 20;
 function scalePositions() {
-  console.log(window.innerWidth)
-  if (window.innerWidth > 1375) {
+  let blockHeight = map.getBoundingClientRect().height;
+  console.log('Висота блока:', blockHeight, 'px');
+  if (window.screen.width > 1375 ) {
     pointWidth = 20;
     console.log('shirina', window.innerWidth)
     scale = 1.9;
     console.log(scale);
     pointHeight = 150;
   }
-  else if (window.innerWidth < 1375 && window.innerWidth > 1128) {
+  else if (window.screen.width < 1375 && window.screen.width > 1128 ) {
     pointWidth = 9
-    console.log('shirina < 1338', window.innerWidth)
+    console.log('shirina < 1338', window.screen.width)
     scale = 1.9;
     console.log(scale);
     pointHeight = 150;
   }
-  else if (window.innerWidth < 1128 && window.innerWidth > 945) {
+  else if (window.screen.width < 1128 && window.screen.width > 945 ) {
     scale = 1.7;
-    console.log('shirina < 1128', window.innerWidth);
-    pointWidth = 7;
+    console.log('shirina < 1128', window.screen.width);
+    pointWidth = 0.007 * window.screen.width;;
     pointHeight = 150;
   }
-  else if (window.innerWidth < 945 && window.innerWidth > 750) {
+  else if (window.screen.width < 945 && window.screen.width > 750 ) {
     scale = 2;
-    console.log('shirina < 945', window.innerWidth)
+    console.log('shirina < 945', window.screen.width)
     pointWidth = 6;
     pointHeight = 150;
   }
-  else if (window.innerWidth < 750 && window.innerWidth > 570) {
+  else if (window.screen.width < 750 && window.screen.width > 650 ) {
     scale = 2;
-    console.log('shirina < 750', window.innerWidth)
-    pointWidth = 0.0011 * window.screen.width;
-    pointHeight = -0.0009 * window.screen.width;
+    console.log('shirina < 750', window.screen.width)
+    pointWidth = 0.003 * window.screen.width;
+    console.log('pointWidth ',pointWidth);
+    pointHeight = 0.08* window.screen.width;
+    console.log('pointHeight ',pointHeight);
+
   }
-  else if (window.innerWidth < 570 && window.innerWidth > 500) {
-    scale = 2.4;
-    console.log('shirina < 570', window.innerWidth)
-    pointWidth = 0.00089 * window.screen.width;
+  else if (window.screen.width < 650 && window.screen.width > 570 ) {
+    scale = 2;
+    console.log('shirina < 650', window.screen.width)
+    pointWidth = 0.003 * window.screen.width;
+    pointHeight = 0.001* window.screen.width;
+    console.log('pointHeight ',pointHeight);
+
+  }
+  else if (window.screen.width < 570 && window.screen.width > 500) {
+    scale = 2.3;
+    console.log('shirina < 570', window.screen.width)
+    pointWidth = 0.003 * window.screen.width;
     pointHeight = -0.03 * window.screen.width;
   }
-  else if (window.innerWidth < 500 && window.innerWidth > 450) {
+  else if (window.screen.width < 500 && window.screen.width > 450) {
     scale = 2.4;
-    console.log('shirina < 570', window.innerWidth)
-    pointWidth = 0.00078 * window.screen.width;
+    console.log('shirina < 570', window.screen.width)
+    pointWidth = 0.003 * window.screen.width;
     pointHeight = -0.03 * window.screen.width;
   }
-  else if (window.innerWidth < 450 && window.innerWidth > 400) {
+  else if (window.screen.width < 450 && window.screen.width > 400) {
     scale = 2.4;
-    console.log('shirina < 570', window.innerWidth)
-    pointWidth = 0.00068 * window.screen.width;
-    pointHeight = -0.09 * window.screen.width;
+    console.log('shirina < 570', window.screen.width)
+    pointWidth = 0.003 * window.screen.width;
+    pointHeight = -0.2 * window.innerHeight;
   }
-  else if (window.innerWidth < 400 && window.innerWidth > 350) {
+  else if (window.screen.width < 400 && window.screen.width > 350) {
     scale = 2.9;
-    console.log('ura < 400', window.innerWidth)
-    pointWidth = 0.00058 * window.screen.width;
-    pointHeight = -0.1 * window.screen.width;
+    console.log('ura < 400', window.screen.width)
+    pointWidth = 0.003 * window.screen.width;
+    pointHeight = -blockHeight / 6;
   }
-  else if (window.innerWidth < 350 && window.innerWidth > 300) {
+  else if (window.screen.width < 350) {
     scale = 3.5;
     console.log('ura 350', window.screen.width)
-    pointWidth = 0.0005 * window.screen.width;
+    pointWidth = 0.003 * window.screen.width;
     pointHeight = -0.1 * window.screen.width;
   }
 }
