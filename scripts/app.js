@@ -167,10 +167,11 @@ function scalePositions() {
 
   }
   else if (window.screen.width < 650 && window.screen.width > 570 ) {
-    scale = 2;
+    scale = 1.7;
     console.log('shirina < 650', window.screen.width)
     pointWidth = 0.003 * window.screen.width;
-    pointHeight = 0.001* window.screen.width;
+    pointHeight = blockHeight * 0.02;
+    console.log ('blockHeight' , blockHeight * 0.0000001)
     console.log('pointHeight ',pointHeight);
 
   }
@@ -182,24 +183,24 @@ function scalePositions() {
   }
   else if (window.screen.width < 500 && window.screen.width > 450) {
     scale = 2.4;
-    console.log('shirina < 570', window.screen.width)
+    console.log('shirina < 500', window.screen.width)
     pointWidth = 0.003 * window.screen.width;
     pointHeight = -0.03 * window.screen.width;
   }
   else if (window.screen.width < 450 && window.screen.width > 400) {
     scale = 2.4;
-    console.log('shirina < 570', window.screen.width)
+    console.log('shirina < 450', window.screen.width)
     pointWidth = 0.003 * window.screen.width;
-    pointHeight = -0.2 * window.innerHeight;
+    pointHeight = -blockHeight / 6; 
   }
   else if (window.screen.width < 400 && window.screen.width > 350) {
-    scale = 2.9;
+    scale = 2;
     console.log('ura < 400', window.screen.width)
     pointWidth = 0.003 * window.screen.width;
     pointHeight = -blockHeight / 6;
   }
   else if (window.screen.width < 350) {
-    scale = 3.5;
+    scale = 2;
     console.log('ura 350', window.screen.width)
     pointWidth = 0.003 * window.screen.width;
     pointHeight = -0.1 * window.screen.width;
