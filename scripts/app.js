@@ -194,16 +194,16 @@ function scalePositions() {
     pointHeight = -blockHeight / 6;
   }
   else if (window.screen.width < 400 && window.screen.width > 350) {
-    scale = 2;
+    scale = 2.6 ;
     console.log('ura < 400', window.screen.width)
     pointWidth = 0.003 * window.screen.width;
     pointHeight = -blockHeight / 6;
   }
   else if (window.screen.width < 350) {
-    scale = 2;
+    scale = 3;
     console.log('ura 350', window.screen.width)
     pointWidth = 0.003 * window.screen.width;
-    pointHeight = -0.1 * window.screen.width;
+    pointHeight = -0.8 * window.screen.width;
   }
 }
 

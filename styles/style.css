@@ -502,7 +502,7 @@ h4 {
   }
 
   .info-block {
-    height: 90%;
+    height: 80%;
   }
 
   .slider {
@@ -554,7 +554,7 @@ h4 {
 
 @media screen and (max-height: 750px) {
   .info-block {
-    height: 90%;
+    height: 80%;
   }
 
   .slider {
@@ -564,3 +564,8 @@ h4 {
 }
 
 @media screen and (min-height: 910px) {}
+@media(max-width: 500px) {
+  .info-block {
+    height: 70%;
+  }
+}
