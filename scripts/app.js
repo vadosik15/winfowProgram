@@ -229,7 +229,12 @@ console.log(regionsArray)
 
 const opacityMap = new Map();
 areas.forEach((area) => {
-
+area.addEventListener('mouseover', ()=> {
+  area.classList.add('hover')
+})
+area.addEventListener('mouseout', ()=> {
+  area.classList.remove('hover')
+})
   opacityMap.set(area, 1);
   function handleRegions(bool) {
     if (bool) {
@@ -296,6 +301,7 @@ areas.forEach((area) => {
           area.style.transform = '';
           area.style.filter = '';
           indexOfOblast = '';
+          area.classList.remove('hover');
         },
       });
 
