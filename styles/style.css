@@ -86,6 +86,7 @@ text {
   line-height: 120%;
   transition: 0.3s;
 }
+
 /* 
 .enlarge:hover+text {
   font-size: 10px;
@@ -495,6 +496,15 @@ h4 {
 
   body {
     height: auto;
+  }
+
+  .info-block {
+    height: 90%;
+  }
+
+  .slider {
+    position: static;
+    margin-top: -10px;
   }
 
 }
